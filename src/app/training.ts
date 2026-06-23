@@ -1,12 +1,14 @@
 type IStatus = 'success' | 'error' | 'loading';
 type ITextFormat = 'uppercase' | 'capitalize' | 'lowercase';
 
+type IStudio = 'DC' | 'Marvel' | 'WD' | 'WB'
+
 interface IUser {
   id: string;
   name: string;
   email: string;
   phone: string;
-  studio?: 'DC' | 'Marvel' | 'WD' | 'WB';
+  studio?: IStudio;
 }
 
 interface IEmployee extends IUser {
@@ -67,6 +69,6 @@ export const users: IUser[]= [
   }
 ]
 
-export const filterUsers = (arr: IUser[], studio) => {
+export const filterUsers = (arr: IUser[], studio: IStudio): IUser[] => {
   return arr.filter((el) => el.studio === studio);
 }
