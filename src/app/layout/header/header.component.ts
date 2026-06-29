@@ -9,4 +9,5 @@ import {Component} from '@angular/core';
 
 export class HeaderComponent {
   logoImg = '/Logo-img.svg'
+  companyName = 'РУМТИБЕТ'
 }

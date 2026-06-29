@@ -8,6 +8,20 @@
   padding: 30px 370px;
 }
 
+.header-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  letter-spacing: 40%;
+}
+
 .nav-list {
   display: flex;
   align-items: center;

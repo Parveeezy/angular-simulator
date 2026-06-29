@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HeaderComponent} from './layout/header/header.component';
 import {Color} from '../enums/Color';
+import {Collection} from '../collections';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,13 @@ export class AppComponent {
   constructor() {
     this.checkLastVisit()
     this.visitCount()
+    this.checkColor('red')
   }
 
   checkColor(color: string) {
     return color === Color.BLUE || color === Color.GREEN || color === Color.RED;
   }
+  collection = new Collection([1,2,3,4,5,6]);
 
   lastVisit: string | null = null;
 
@@ -33,9 +36,6 @@ export class AppComponent {
   visitCount() {
     const VISIT_COUNT_KEY = 'VISIT_COUNT_KEY';
     const currentCount = parseInt(localStorage.getItem(VISIT_COUNT_KEY) || '0', 10);
-
-    const count = currentCount;
     localStorage.setItem(VISIT_COUNT_KEY, JSON.stringify(currentCount + 1));
   }
-
 }
