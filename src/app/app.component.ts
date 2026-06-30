@@ -22,7 +22,12 @@ export class AppComponent {
     return color === Color.BLUE || color === Color.GREEN || color === Color.RED;
   }
   collection = new Collection([1,2,3,4,5,6]);
-
+  collection2 = new Collection([
+    {id: 1, name: 'Styopa', login: 'STEPAN'},
+    {id: 2, name: 'Petya', login: 'Petka'},
+    {id: 3, name: 'Vasya', login: 'Vasek'}
+  ]);
+  
   lastVisit: string | null = null;
 
   checkLastVisit() {
