@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from './layout/header/header.component';
 import { Color } from '../enums/Color';
 import { Collection } from '../collections';
+import {HikeComponent} from './layout/hike/hike.component';
+import {HeroComponent} from './layout/hike/hero/hero.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    HeaderComponent
+    HeaderComponent,
+    HeroComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

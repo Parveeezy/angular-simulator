@@ -1,0 +1,30 @@
+<div
+  class="hero-container"
+  alt="Hero" [style.background-image]="'url(' + hero + ')'"
+>
+  <div class="hero-wrapper">
+    <div class="hero-title-wrapper">
+      <h1 class="hero-title">
+        Насладись прогулкой в горах<br>с командой единомышленников
+      </h1>
+    </div>
+
+    <form action="" class="hero-form">
+      <div>
+        <input id="location" class="hero-input" placeholder="Локация для тура">
+        <label for="location">выберите из списка</label>
+      </div>
+      <div>
+        <input id="date" class="hero-input" type="date" placeholder="Дата похода">
+        <label for="date">укажите дату</label>
+      </div>
+      <div>
+        <input id="participant" class="hero-input" placeholder="Участники">
+        <label for="participant">выберите из списка</label>
+      </div>
+      <button>Найти программу</button>
+    </form>
+  </div>
+
+</div>
+<app-hike/>
