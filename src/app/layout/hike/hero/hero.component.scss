@@ -4,6 +4,7 @@
   background-size: cover;
   height: 100vh;
   width: 100%;
+  position: sticky;
 }
 
 .hero-wrapper {
@@ -37,9 +38,57 @@
   backdrop-filter: blur(6px);
   border-radius: 10px;
   display: flex;
+  padding: 40px 43px;
+  gap: 24px;
+}
+
+.hero-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .hero-input {
-  max-width: 270px;
-  height: ;
+  width: 270px;
+  height: 52px;
+  padding: 14px 16px;
+  border: 1px solid #FDFDFD;
+  border-radius: 16px;
+  background-color: transparent;
+  color: #FDFDFD;
+}
+
+.hero-input-icon {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 12px;
+  top: 35%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hero-input {
+  &::placeholder {
+    color: #ffffff;
+    opacity: 1;
+  }
+}
+
+label {
+  margin-left: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #FDFDFD;
+  font-weight: 400;
+  line-height: 150%;
+}
+.hero-btn {
+  padding: 16px 36px;
+  width: 213px;
+  height: 52px;
+  background-color: #1A3E3E;
+  color: #FDFDFD;
+  border-radius: 4px;
+  border: none;
 }

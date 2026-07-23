@@ -52,3 +52,53 @@
   background-color: rgb(205 205 205);
   cursor: pointer;
 }
+
+.header-widget {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-date {
+  font-variant-numeric: tabular-nums;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter-value {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+}
+
+.counter button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  background: transparent;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: 1px solid currentColor;
+  background: transparent;
+  border-radius: 4px;
+}

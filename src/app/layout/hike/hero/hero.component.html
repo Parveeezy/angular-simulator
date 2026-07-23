@@ -10,19 +10,35 @@
     </div>
 
     <form action="" class="hero-form">
-      <div>
+      <div class="hero-input-wrapper">
         <input id="location" class="hero-input" placeholder="Локация для тура">
+        <img [src]="arrow" alt="" class="hero-input-icon">
         <label for="location">выберите из списка</label>
       </div>
-      <div>
-        <input id="date" class="hero-input" type="date" placeholder="Дата похода">
+
+      <div class="hero-input-wrapper">
+        <input
+          #dateInput
+          id="date"
+          class="hero-input"
+          [type]="inputType"
+          [readonly]="inputType === 'text'"
+          placeholder="Дата похода"
+          [formControl]="dateControl"
+          (click)="onClick()"
+          (blur)="onBlur()"
+        >
+        <img [@if]="inputType === 'text'" [src]="calendar" class="hero-input-icon" alt="">
         <label for="date">укажите дату</label>
       </div>
-      <div>
+
+      <div class="hero-input-wrapper">
         <input id="participant" class="hero-input" placeholder="Участники">
+        <img [src]="arrow" alt="" class="hero-input-icon">
         <label for="participant">выберите из списка</label>
       </div>
-      <button>Найти программу</button>
+
+      <button class="hero-btn">Найти программу</button>
     </form>
   </div>
 
