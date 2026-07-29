@@ -2,19 +2,20 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  min-height: 100dvh;
   width: 100%;
-  position: sticky;
+  display: flex;
+  align-items: center;
 }
 
 .hero-wrapper {
   max-width: 1180px;
+  width: 100%;
   display: flex;
   margin: 0 auto;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 431px;
+  gap: 32px;
 }
 
 .hero-title-wrapper {

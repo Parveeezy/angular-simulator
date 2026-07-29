@@ -14,11 +14,19 @@ import {HeroComponent} from './layout/hike/hero/hero.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  isLoading = true;
+
   constructor() {
     this.checkLastVisit()
     this.visitCount()
     this.checkColor('red')
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
 
   checkColor(color: string) {

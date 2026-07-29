@@ -1,2 +1,8 @@
-<app-header/>
-<app-hero />
+@if (isLoading) {
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+} @else {
+  <app-header/>
+  <app-hero />
+}

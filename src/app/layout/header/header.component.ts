@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   activeView: 'timer' | 'counter' = 'timer';
 
   currentDate = new Date();
+  liveValue = '';
   private intervalId: any;
 
   ngOnInit(): void {
