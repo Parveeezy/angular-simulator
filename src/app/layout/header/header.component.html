@@ -5,27 +5,49 @@
   </div>
   <nav>
     <ul class="nav-list">
-      <li class="nav-list-item">
-        <a href="#" class="nav-list-item-link">Главная</a>
-      </li>
-      <li class="nav-list-item">
-        <a href="#" class="nav-list-item-link">Про гида</a>
-      </li>
-      <li class="nav-list-item">
-        <a href="#" class="nav-list-item-link">Программа тура</a>
-      </li>
-      <li class="nav-list-item">
-        <a href="#" class="nav-list-item-link">Стоимость</a>
-      </li>
-      <li class="nav-list-item">
-        <a href="#" class="nav-list-item-link">Блог</a>
-      </li>
-      <li class="nav-list-item">
-        <a href="#" class="nav-list-item-link">Контакты</a>
-      </li>
+      <li class="nav-list-item"><a href="#" class="nav-list-item-link">Главная</a></li>
+      <li class="nav-list-item"><a href="#" class="nav-list-item-link">Про гида</a></li>
+      <li class="nav-list-item"><a href="#" class="nav-list-item-link">Программа тура</a></li>
+      <li class="nav-list-item"><a href="#" class="nav-list-item-link">Стоимость</a></li>
+      <li class="nav-list-item"><a href="#" class="nav-list-item-link">Блог</a></li>
+      <li class="nav-list-item"><a href="#" class="nav-list-item-link">Контакты</a></li>
     </ul>
   </nav>
   <div>
     <button class="nav-btn">Консультация</button>
   </div>
 </header>
+
+<div class="header-widget">
+
+  <div class="live-input-wrapper">
+    <input
+      #liveInput
+      class="live-input"
+      placeholder="Live-input"
+      (input)="liveValue = liveInput.value"
+    >
+    @if (liveValue) {
+      <span class="live-input-value">{{ liveValue }}</span>
+    }
+  </div>
+
+  @if (activeView === 'timer') {
+    <div class="header-date">
+      {{ currentDate | date: 'dd.MM.yyyy HH:mm:ss' }}
+    </div>
+  }
+
+  @if (activeView === 'counter') {
+    <div class="counter">
+      <button (click)="decrement()" [disabled]="counter === 0">−</button>
+      <span class="counter-value">{{ counter }}</span>
+      <button (click)="increment()">+</button>
+    </div>
+  }
+
+  <button class="toggle-btn" (click)="toggleView()">
+    {{ activeView === 'timer' ? 'Показать счётчик' : 'Показать таймер' }}
+  </button>
+
+</div>

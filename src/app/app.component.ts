@@ -2,20 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from './layout/header/header.component';
 import { Color } from '../enums/Color';
 import { Collection } from '../collections';
+import {HikeComponent} from './layout/hike/hike.component';
+import {HeroComponent} from './layout/hike/hero/hero.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    HeaderComponent
+    HeaderComponent,
+    HeroComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  isLoading = true;
+
   constructor() {
     this.checkLastVisit()
     this.visitCount()
     this.checkColor('red')
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
 
   checkColor(color: string) {
